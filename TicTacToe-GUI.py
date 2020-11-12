@@ -1,4 +1,4 @@
-# TIC-TAC-TOE
+# TIC-TAC-TOE - GUI Verison
 import turtle as pt
 from Minimax import *
 from random import random, choice
