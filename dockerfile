@@ -3,4 +3,4 @@ WORKDIR /TicTacToe
 COPY . .
 RUN apt-get -y update
 RUN pip3 install -r requirements.txt
-CMD ["python","./Minimax.py"]
+CMD ["python","TicTacToe-CLI.py"]
