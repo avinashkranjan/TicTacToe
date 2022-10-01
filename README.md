@@ -8,6 +8,3 @@ Check out the latest Release [here](https://github.com/avinashkranjan/TicTacToe/
 ## 🙏 Support
 
 Show your support to the project. Don't forget to leave a star ⭐️ while you are at it.
-
-try your luck
-hello
