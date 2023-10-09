@@ -1,3 +1,5 @@
+#initial imports
+import time
 # board
 # display board
 # play game
@@ -56,6 +58,53 @@ $$$$$$$$\ $$\        $$$$$$$$\               $$$$$$$$\
 """
 )
 
+#greet the users
+
+#defining some functions
+def greet_users():
+    time.sleep(1)
+    print("Welcome to tic-tac-toe game , pls note that there must be two players")
+    time.sleep(2)
+    print("Please wait...")
+
+
+
+
+greet_users()
+USER_X_NAME = str(input("What is the name of user X ? ")).title()
+USER_O_NAME = str(input("What is the name of user O ? ")).title()
+
+print("processing, pls wait ")
+time.sleep(1)
+print(f"USER X : {USER_X_NAME}")
+print(f"USER O : {USER_O_NAME}")
+is_x_ready = str(input(f"Is {USER_X_NAME} ready to start the game ? Type X , if not ready type EXIT ").title())
+if is_x_ready == "X":
+    global is_o_ready
+    is_o_ready = str(input(f"Is {USER_X_NAME} ready to start the game ? Type O , if not ready type EXIT ").title())
+    if is_o_ready == "O":
+        print("Ok so both of you are ready to play the game lets start")
+    else:
+        print(
+            f"user {USER_O_NAME} is not ready to play the game is aborted, {USER_X_NAME} pls tell your friend to be "
+            f"ready if you want to play the game , or find any other friend ;)")
+else:
+    print(f"user {USER_X_NAME} is not ready to play the game is aborted, {USER_O_NAME} pls tell your friend to be ready "
+          f"if you want to play the game , or find any other friend ;)")
+
+if is_o_ready == "O" and is_x_ready == "X":
+    game_is_on = True
+
+#giving the instructions
+
+print("INSTRUCTIONS:\n 1. The boxes are designed serially,\n 2.like 1,2,3,\n         4,5,6,\n         7,8,9\n3. you have "
+      "to type number where you want to put your mark")
+print("---")
+time.sleep(3)
+print("I hope instructions are clear to both of the players , so lets start the same")
+time.sleep(2)
+print("Pls wait ")
+time.sleep(3)
 
 # Play a Game of Tic Tac Toe
 def play_game():
@@ -75,7 +124,11 @@ def play_game():
 
     # The game has ended
     if winner == "X" or winner == "O":
-        print("Booyah! " + winner + " Won.")
+        if winner == "X":
+            winner_name = USER_X_NAME
+        else:
+            winner_name = USER_O_NAME
+        print("Booyah! " + winner_name + " Won.")
     elif winner == None:
         print("And Tie It is.")
 
